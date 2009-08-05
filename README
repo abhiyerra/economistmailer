@@ -1,0 +1,7 @@
+Economist Mailer
+
+This bot essentially parses all the articles of the current print edition and sends an email
+containing the article.
+
+Requirements:
+gem install ambethia-smtp-tls
