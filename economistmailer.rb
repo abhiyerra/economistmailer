@@ -5,7 +5,7 @@ require 'net/smtp'
 require 'smtp-tls'
 
 FromEmail = 'bot@traytwo.com'
-Password = 'BOT_EMAIL'
+Password = 'BOT_EMAIL_PASSWORD'
 
 ToEmail = 'YOUR_EMAIL'
 
