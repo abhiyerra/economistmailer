@@ -29,6 +29,7 @@ def get_article article_url, section
   doc = Hpricot(open(article_url))
 
   title = (doc/'//title').inner_html
+  title = title.gsub('| The Economist', '')
 
   article = (doc/'div.col-left')
   (article/"script").remove
@@ -45,6 +46,8 @@ Subject: #{title} (#{section})
 Content-Type: text/html; charset="us-ascii"
 
 #{article}
+
+<a href="#{article_url}">Article</a>
 END_MESSAGE
 
   msgstr
