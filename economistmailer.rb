@@ -1,6 +1,6 @@
 require "rubygems"
 require 'open-uri'
-require 'hpricot'
+require 'nokogiri'
 require 'net/smtp'
 require 'smtp-tls'
 
@@ -14,7 +14,7 @@ ToEmail = 'YOUR_EMAIL'
 def get_print_edition
   source = "http://www.economist.com/printedition/"
 
-  doc = Hpricot(open(source))
+  doc = Nokogiri::HTML(open(source))
   doc.search("div.style-2").each do |section|
     cur_section = (section/'h1').inner_html
 
@@ -26,7 +26,7 @@ def get_print_edition
 end
 
 def get_article article_url, section
-  doc = Hpricot(open(article_url))
+  doc = Nokogiri::HTML(open(article_url))
 
   title = (doc/'//title').inner_html
   title = title.gsub('| The Economist', '')
