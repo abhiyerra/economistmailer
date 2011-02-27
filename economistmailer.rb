@@ -10,7 +10,7 @@ def get_print_edition
   url = 'http://www.economist.com/printedition/'
   f =  RestClient.get(url)
 
-  puts "<html><head><title>Economist</title></head>"
+  puts "<html><head><title>Economist</title></head><body>"
 
   doc = Nokogiri::HTML(f)
   doc.search("div.style-2").each do |section|
@@ -24,12 +24,14 @@ def get_print_edition
       article_span = (article/'span').text.strip
       article_title = (article/'h2/a').text
 
+      $stderr.puts article_title
+
       get_article(article_url)
       sleep 1
     end
   end
 
-  puts "</html>"
+  puts "</body></html>"
 end
 
 def get_article(url)
