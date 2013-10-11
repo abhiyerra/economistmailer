@@ -37,6 +37,7 @@ end
 def get_article(url)
   html = open(url)
   doc = Nokogiri::HTML(html.read)
+  doc.encoding = 'utf-8'
 
   doc.search("#ec-article-body").each do |section|
     %w{.share-links-header .related-items}.each do |class_name|
