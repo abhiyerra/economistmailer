@@ -11,7 +11,7 @@ CALLBACK_URL = "http://economistmailer.herokuapp.com/oauth/callback"
 # "http://localhost:4567/oauth/callback"
 
 Pocket.configure do |config|
-  config.consumer_key = '10188-3565cd04d1464e6d0e64b67f'
+  config.consumer_key = '32307-881180083c15c6a309155d5d'
 end
 
 
