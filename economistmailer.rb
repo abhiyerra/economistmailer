@@ -1,6 +1,5 @@
 require 'rubygems'
 require 'open-uri'
-require 'debugger'
 require 'uri'
 require 'nokogiri'
 require "sinatra"
@@ -8,14 +7,13 @@ require 'pocket'
 
 enable :sessions
 
-CALLBACK_URL = "http://localhost:4567/oauth/callback"
+CALLBACK_URL = "http://economistmailer.herokuapp.com/oauth/callback"
+# "http://localhost:4567/oauth/callback"
 
 Pocket.configure do |config|
   config.consumer_key = '10188-3565cd04d1464e6d0e64b67f'
 end
 
-
-@articles = []
 
 def get_print_edition
 
@@ -68,7 +66,7 @@ get "/" do
 
   if session[:access_token]
     '
-<a href="/add">Add Economist</a>
+<a href="/add_economist">Add the current Economist</a>
     '
   else
     '<a href="/oauth/connect">Connect with Pocket</a>'
@@ -99,6 +97,6 @@ get "/oauth/callback" do
   redirect "/"
 end
 
-get '/add' do
+get '/add_economist' do
   get_print_edition
 end
