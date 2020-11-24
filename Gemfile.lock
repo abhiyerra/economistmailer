@@ -14,7 +14,7 @@ GEM
       faraday_middleware (~> 0.8)
       hashie (>= 0.4.0)
       multi_json (~> 1.0, >= 1.0.3)
-    rack (1.5.2)
+    rack (1.6.12)
     rack-protection (1.5.3)
       rack
     sinatra (1.4.5)
