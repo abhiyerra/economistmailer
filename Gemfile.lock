@@ -20,7 +20,7 @@ GEM
       hashie (>= 0.4.0)
       multi_json (~> 1.0, >= 1.0.3)
     racc (1.8.1)
-    rack (2.2.4)
+    rack (2.2.20)
     rack-protection (2.2.3)
       rack
     ruby2_keywords (0.0.5)
