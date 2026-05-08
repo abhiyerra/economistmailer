@@ -13,7 +13,7 @@ GEM
     multipart-post (1.2.0)
     mustermann (3.0.4)
       ruby2_keywords (~> 0.0.1)
-    nokogiri (1.19.1)
+    nokogiri (1.19.3)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
     pocket-ruby (0.0.5)
